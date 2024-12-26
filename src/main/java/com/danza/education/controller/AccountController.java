@@ -35,6 +35,7 @@ public class AccountController {
                 .map(account -> {
                     account.setAccountNumber(newAccount.getAccountNumber());
                     account.setBalance(newAccount.getBalance());
+                    account.setClientId(newAccount.getClientId());
                     return accountRepository.save(account);
                 })
                 .orElseGet(() -> {
